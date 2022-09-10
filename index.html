@@ -199,24 +199,47 @@ Modified by: Rex
 
 	<!-- define a the area the map will go into. Feel free to change the size as needed -->
 <div id="map" style="width:800px; height: 500px;"></div>
-<script>
 
-var coords = [37.69, -59.23]; // the geographic center of our map
-var zoomLevel = 3; // the map scale. See: http://wiki.openstreetmap.org/wiki/Zoom_levels
 
-var map = L.map('map').setView(coords, zoomLevel);
+	var map = L.map('map').setView([51.505, -0.09], 13);
 
-// we need to provide the map with some base map tiles. There are few free options.
-// we'll use Stamen Acetate, a muted base map good for overlaying data.
-var tiles = 'http://acetate.geoiq.com/tiles/acetate-hillshading/';
-// if you'd like to explore other base maps, see: http://developer.mapquest.com/web/products/open/map
+	var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
 
-// if you use different tiles, be sure to update the attribution :)
-L.tileLayer(tiles+'{z}/{x}/{y}.png', {
-attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="http://FortiusOne.com">FortiusOne</a> and <a href="http://stamen.com">Stamen</a>',
-maxZoom: 18
-}).addTo(map);
-</script>
+	var marker = L.marker([51.5, -0.09]).addTo(map)
+		.bindPopup('<b>Hello world!</b><br />I am a popup.').openPopup();
+
+	var circle = L.circle([51.508, -0.11], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.5,
+		radius: 500
+	}).addTo(map).bindPopup('I am a circle.');
+
+	var polygon = L.polygon([
+		[51.509, -0.08],
+		[51.503, -0.06],
+		[51.51, -0.047]
+	]).addTo(map).bindPopup('I am a polygon.');
+
+
+	var popup = L.popup()
+		.setLatLng([51.513, -0.09])
+		.setContent('I am a standalone popup.')
+		.openOn(map);
+
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent('You clicked the map at ' + e.latlng.toString())
+			.openOn(map);
+	}
+
+	map.on('click', onMapClick);
+
+
 	
 </div>
 </div>
