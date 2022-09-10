@@ -14,9 +14,15 @@ Modified by: Rex
 <link rel="stylesheet" href="CSS/main.css" />
 <link rel="stylesheet" href="CSS//rex1.css"> <!-- link to stylesheet for CSS -->
 <link rel="icon" href="images///leaf.jpg">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+crossorigin=""/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- link to social icon library -->
 <style>
 </style>
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+crossorigin=""></script>
 
 <title>Home</title>
 </head>
@@ -99,7 +105,7 @@ Modified by: Rex
 
 <!-- Feature #3 -->
 <section>
-	<a href="#" class="bordered-feature-image"><img src="images/pic03.jpg" alt="" /></a>
+	<a href="#" class="bordered-feature-image"><img src="images///leaf.jpg" alt="" /></a>
 	<h2>License Info</h2>
 	<p>
 		Halcyonic is licensed under the <a href="http://html5up.net/license">CCA</a> license,
@@ -113,14 +119,23 @@ Modified by: Rex
 
 <!-- Feature #4 -->
 <section>
-	<a href="#" class="bordered-feature-image"><img src="images/pic04.jpg" alt="" /></a>
+	<a href="#" class="bordered-feature-image"><img src="images///leaf.jpg" alt="" /></a>
 	<h2>Volutpat etiam aliquam</h2>
 	<p>
 		Duis neque nisi, dapibus sed mattis quis, rutrum accumsan sed. Suspendisse
 		eu varius nibh. Suspendisse vitae magna mollis.
 	</p>
 </section>
-
+	
+	
+<div id="map"></div>
+	var map = L.map('map').setView([51.505, -0.09], 13);
+	L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '© OpenStreetMap'
+}).addTo(map);
+	
+	
 </div>
 </div>
 </div>
