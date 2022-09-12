@@ -1,65 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="UTF-8">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="css//main.css"> <!-- link to stylesheet for CSS -->
-<link rel="icon" href="images///leaf.jpg">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- link to social icon library -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
-    <style type="text/css">
-      body{
-        margin: 0;
-        padding: 0;
-      }
-      .center {
-  margin: auto;
-  width: 60%;
-  border: 3px solid #CD0400;
-  padding: 10px;
-}
-      #map {
-        width: 50vw;
-        height: 40vh;
-      }
-    </style>
-
-<title>Portfolio</title>
-</head>
-<body>
-
-<!-- Navigation bar, top of page -->
-<div class="topnav">
-	<a id="logo"><img src="images///leaf.png" alt="Rex'n Maps" title="Rex'n Maps Consulting Logo" style="width:50px;height:50px;"></a>
-	<div class="topnav-right">
-		<!-- <a href="index.html">Home</a>
-        <a href="report.html">Final Report</a>
-        <a href="resume.html">Resume</a> -->
-        <a class="active" href="index.html">Home</a>
-        <!-- <a href="1925B.html">Final Solution</a> -->    
-	</div>
-</div>
-<div id="map" class="center"></div>
-
-    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin="">
-
-    </script>
-    <script>
-        const map = L.map('map', {
-          center: [54.7824, -127.1686],
-          zoom: 14
-        });
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
-const marker1 = L.marker([54.7824, -127.1686]).addTo(map);
-const marker2 = L.marker([54.893629, -127.173068]).addTo(map);
-
-    </script>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <meta name="color-scheme" content="dark light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- link to stylesheet for CSS -->
+        <link rel="icon" href="images///leaf_r.png">
+        <link rel="stylesheet" 
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"><!-- link to social icon library -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css//main.css"> 
 
 
-<div class="footer">
-    <a href="https://ca.linkedin.com/in/jms-brtn" class="fa fa-linkedin-square" style="font-size:48px;color:#F9FCE9"></a>
-<p class="copyright">ⓒ James Burton 2022</p>
-</div>
-</body>
+
+        <style type="text/css">
+            /* this image would not load through main.css during local testing*/
+            .hero-image {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images///sun_map.png");
+            }
+        </style>
+
+        <title>Landing Page</title>
+    </head>
+    <body>
+        <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin="">
+
+        </script>
+
+        <!-- Navigation bar, top of page -->
+        <div class="topnav">
+            <a id="logo"><img src="images///leaf_b.png" alt="leaf stand in text" title="leaf stand in Logo" style="width:29px;height:29px;margin-top:45%;"></a>
+            <div class="topnav-right">
+
+                <a href="index.html" class="active">
+                    <button  class="fa-solid fa-house" ></button>
+
+                </a>
+                <a href="projects.html">
+                    <button  class="fa-solid fa-code" ></button>
+                </a>
+                <a>
+                    <button class="fa-solid fa-moon-o" onclick="myFunction()"></button>
+                    <script>
+                        function myFunction() {
+                            var element = document.body;
+                            element.classList.toggle("dark-mode");
+                        }
+                    </script>
+                </a>
+            </div>
+        </div>
+        <!-- Navigation bar, bottom of bar -->
+
+        <!-- top of hero image, built in 2% margin top and bottom-->
+        <div class="hero-image">
+            <div class="hero-text" >
+                <h1 style="font-size:50px">My maps do more than yours!</h1>
+                <p>Dream big when dreaming of your next digital cartographic product.</p>
+                <br>
+                <p>See what my maps can do for you.</p>
+                <button>Featured Projects</button>
+            </div>
+        </div>
+        <!-- bottom of hero image, built in 2% margin top and bottom-->
+
+        <!-- top of nothing yet but fluid container for highligh of skills and links, built in 2% margin top and bottom-->
+        <div class="container-fluid" >
+            <br>
+            <p>REX</p>
+            <br>
+        </div>
+        <!-- bottom of nothing, -->
+
+
+        <!-- top of location contact, built in 2% margin top and bottom-->
+        <div class="container-fluid" style="text-align: center;" >
+
+            <div class="justify-content-center align-items-center">
+                <div  class="col-sm-6">
+
+                    <h1>Currently in:</h1>
+                    <p>Beautiful British Columbia!</p> 
+                    Proudly serving Smithers, BC with excellent cartographic solutions<br>
+                    Respectfully working on unceded Wetsuweten Territory.<br>
+                    <br>
+                    Some other text may go here
+                </div>
+                <div class="col-sm-6">
+                    <div id="map"></div>
+
+
+                    <script>
+                        const map = L.map('map', {
+                            center: [54.7824, -127.1686],
+                            zoom: 10
+                        }); L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+                            subdomains: 'abcd',
+                            maxZoom: 20}).addTo(map);
+                        const marker1 = L.marker([54.7824, -127.1686]).addTo(map);
+                    </script>  
+                </div>
+            </div>
+        </div>
+        <!-- top of location contact, built in 2% margin top and bottom-->
+
+        
+        <div class="container-fluid" >
+            <br>
+            <p>REX</p>
+            <br>
+        </div>       
+        
+        <!-- top of footer-->
+        <div class="footer">
+            <a href="https://ca.linkedin.com/in/jms-brtn" class="fa-brands fa-linkedin-square" style="font-size:48px;color:#FFFFFF"></a>
+            <a href="https://github.com/James-Burton" class="fa-brands fa-github" style="font-size:48px;color:#FFFFFF"></a>
+            <p class="copyright">ⓒ James Burton 2022</p>
+        </div>
+        <!-- bottom of footer-->
+    </body>
 </html>
