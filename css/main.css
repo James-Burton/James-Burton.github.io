@@ -3,14 +3,21 @@
 body, html {
     margin: 0;
     font-family: 'Raleway',sans-serif;
+    font-size:14px;
     height: 100%;
     background-color: #FFFFFF;
 }
-p{
+p a{
     margin:0;
 }
-.dark-mode {
+.myDark{
+    color:#08070D;
+}
+.dark-mode  {
   background-color: #08070D;
+  color: #fafafa;
+}
+.dark-mode .myDark{
   color: #fafafa;
 }
 .boxA {
@@ -21,9 +28,9 @@ p{
     margin: 25px;
 }
 .boxB {
-    background-color: #d3d3d3;
+    background-color: #ffffff;
     height: auto;
-    border: 2px solid #9a37ac;
+    border: 2px solid #08070D;
     padding: 25px;
     margin: 25px;
 }
@@ -89,7 +96,7 @@ p{
     text-decoration: none;
 }
 .topnav-right a.active {
-    color: #cd0400;
+    color: #5a5a5a;
 }
 .topnav-right {
     float: right;
@@ -110,7 +117,7 @@ p{
     border: none;
     outline: 0;
     background-color: #fafafa;
-    color: #cd0400;
+    color: #5a5a5a;
 }
 
 /* Sub-navigation menu */
@@ -207,14 +214,14 @@ footer {
     outline: 0;
     display: inline-block;
     padding: 10px 25px;
-    color: #08070D;
-    background-color: #5a5a5a;
+    color: #ffffff;
+    background-color: #292929;
     text-align: center;
     cursor: pointer;
 }
 
 .hero-text button:hover {
-    background-color: #292929;
+    background-color: #5a5a5a;
     color: #FFFFFF;
 }
 #contact {
@@ -228,7 +235,7 @@ footer {
     width: 40vw;
     height: 30vw;
     margin:auto;
-    border:2px solid #9a37ac;
+    border:2px solid #08070D;
 }
 #map_project {
     width: 95vw;
