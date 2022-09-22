@@ -183,10 +183,10 @@ body {
   #map {
     /* position: absolute; */
     padding-top: 0px;
-     height:70%; 
+     height:80%; 
     top: 0;
     bottom: 0;
-    width: 75%;
+    width: 90%;
     margin: 1% 12.5% 2% 12.5%;
   }
 
