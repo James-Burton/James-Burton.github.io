@@ -603,7 +603,7 @@ map.on('load', function() {
             + '<b>'+ e.features[0].properties.POP + '</b>' +  " and has an estimated GDP of <b>$" 
             + e.features[0].properties.GDP_Bil.toFixed(1) + ' billion </b> under the <b>' 
             + e.features[0].properties.Scenario  + '</b> scenario'  + '. </p>' 
-            +'<canvas id="pie-chart-cit" width="500" height="500"></canvas>')
+            +'<canvas id="pie-chart-cit" width="15%" height="17.5%"></canvas>')
             .addTo(map);
             chartMaker3();
             clickPopup.setLngLat(clickPopup.getLngLat());
