@@ -3,7 +3,6 @@
 body, html {
     margin: 0;
     font-family: 'Raleway',sans-serif;
-
     
     flex-direction: column;
     font-size:14px;
@@ -12,6 +11,9 @@ body, html {
 }
 p a{
     margin:0;
+}
+.row{
+    background-color:#ffffff;
 }
 .myDark{
     color:#08070D;
@@ -22,6 +24,7 @@ p a{
 }
 .dark-mode .myDark{
   color: #fafafa;
+    background-color: #08070D;
 }
 .boxA {
     height: auto;
@@ -55,6 +58,7 @@ p a{
     content: "";
     display: table;
     clear: both;
+    background-color:#ffffff;
 }
 
 /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
@@ -258,6 +262,6 @@ footer {
     text-align:center;
 }
 
-.col-sm-6 {
-    margin:auto;
+.col-md-4 {
+    background-color: #FFFFFF;
 }
