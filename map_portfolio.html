@@ -14,7 +14,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <title>Map Collection</title>
         <style>
-
+            .bgimg {
+                background-image: url('images/Office_View.png');
+            }
             .column {
                 float: left;
                 width: 33.33%;
@@ -27,7 +29,78 @@
                 display: table;
             }
 
+            /* Slideshow container */
+            .slideshow-container {
+                position: relative;
+ 
+            }
 
+            /* Slides */
+            .mySlides {
+                font-family:Cursive;
+                display: none;
+                padding: 80px;
+                text-align: center;
+                color:black;
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                margin-top: -30px;
+                padding: 16px;
+                color: #888;
+                font-weight: bold;
+                font-size: 20px;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+                position: absolute;
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+                color: white;
+            }
+
+            /* The dot/bullet/indicator container */
+            .dot-container {
+                text-align: center;
+                padding: 20px;
+                /* background: #ddd; */
+            }
+
+            /* The dots/bullets/indicators */
+            .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+            }
+
+            /* Add a background color to the active dot/circle */
+            .active, .dot:hover {
+                background-color: #717171;
+            }
+
+            /* Add an italic font style to all quotes */
+            q {font-style: italic;}
+
+            /* Add a blue color to the author */
+            .author {color: cornflowerblue;}
         </style>
 
     </head>
@@ -59,6 +132,98 @@
         </div>
         <!-- Navigation bar, bottom of bar -->
 
+        <!-- Slideshow container -->
+        <div class="slideshow-container bgimg">
+
+            <!-- Full-width slides/quotes -->
+            <div class="mySlides">
+                <q>Maps encourage boldness. They’re like cryptic love letters. They make anything seem possible.</q>
+                <p class="author">- Mark Jenkins</p>
+            </div>
+
+            <div class="mySlides">
+                <q>Geographers never get lost. They just do accidental field work.</q>
+                <p class="author">- Nicholas Chrisman</p>
+            </div>
+
+            <div class="mySlides">
+                <q>I’ve always been fascinated by maps and cartography. A map tells you where you’ve been, where you are, and where you’re going — in a sense it’s three tenses in one.</q>
+                <p class="author">- Peter Greenaway</p>
+            </div>
+            <div class="mySlides">
+                <q>Geography is just physics slowed down, with a couple of trees stuck in it.</q>
+                <p class="author">- Terry Pratchett</p>
+            </div>
+            <div class="mySlides">
+                <q>Maps are like campfires — everyone gathers around them, because they allow people to understand complex issues at a glance, and find agreement about how to help the land.</q>
+                <p class="author">- Sonoma Ecology Center, GIS/IS Program Web Site</p>
+            </div>
+            <div class="mySlides">
+                <q>Our earth is a globe<br>
+                    whose surface we probe<br>
+                    no map can replace her<br>
+                    but just try to trace her</q>
+                <p class="author">- Steve Waterman</p>
+            </div>
+            <div class="mySlides">
+                <q>Without geography, you’re nowhere!</q>
+                <p class="author">- Jimmy Buffett</p>
+            </div>
+            <div class="mySlides">
+                <q>There’s no blank spots on the map anymore, anywhere on earth. If you want a blank spot on the map, you gotta leave the map behind.</q>
+                <p class="author">- Jon Krakauer</p>
+            </div>
+            <div class="mySlides">
+                <q>A map is the greatest of all epic poems. Its lines and colors show the realization of great dreams.</q>
+                <p class="author">- Gilbert H. Grosvenor</p>
+            </div>
+            <!-- Next/prev buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                    <!-- Dots/bullets/indicators -->
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+            <span class="dot" onclick="currentSlide(9)"></span>
+
+        </div>
+        </div>
+
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+            }
+        </script>
 
         <div class='row myDark'>
             <div class="flex-wrap col-md-4 myDark" style='text-align:center;padding:2%;'>
@@ -142,10 +307,10 @@
         <div class='row myDark'>
             <div class="flex-wrap col-md-4 myDark" style='text-align:center;padding:2%;'>
 
-                <h1> <a href='images/portfolio/Kawartha_Lakes_Zoning.png' target="_blank"><i class="fa-solid fa-map-location-dot myDark"></i></a>
+                <h1> <a href='images/portfolio/Kawartha_Lakes_ZoningMap.png' target="_blank"><i class="fa-solid fa-map-location-dot myDark"></i></a>
                 </h1>
 
-                <p>An example of geocoding addresses to ascertaion which members of the public to invite to a town hall regarding local development that may impact their surroundings. This excercise was fun and resulted in this <a href='images/portfolio/Kawartha_Lakes_Zoning.png' target="_blank">Kawartha Lakes community zoning map</a>.
+                <p>An example of geocoding addresses to ascertaion which members of the public to invite to a town hall regarding local development that may impact their surroundings. This excercise was fun and resulted in this <a href='images/portfolio/Kawartha_Lakes_ZoningMap.png' target="_blank">Kawartha Lakes community zoning map</a>.
                 </p>
 
             </div>
@@ -173,6 +338,8 @@
             </div>
 
         </div>
+
+
 
         <div class="footer">
             <a href="https://ca.linkedin.com/in/jms-brtn" class="fa-brands fa-linkedin-square" style="font-size:48px;color:#FFFFFF"></a>
