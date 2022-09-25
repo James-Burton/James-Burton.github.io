@@ -37,114 +37,116 @@
             <div class="topnav-right">
 
                 <a href="index.html">
-                    <button  class="active fa-solid fa-house" ></button>
+                    <button  class="fa-solid fa-house" ></button>
 
                 </a>
                 <a href="projects.html">
                     <button  class="fa-solid fa-code" ></button>
                 </a>
-                <a>
-                    <button class="fa-solid fa-moon-o" onclick="myFunction()"></button>
-                    <script>
-                        function myFunction() {
-                            var element = document.body;
-                            element.classList.toggle("dark-mode");
-                        }
-                    </script>
-                </a>
+                <a href="map_portfolio.html"> <button class="fa-solid fa-map-location-dot"></button></a>
+                
+                    <a>
+                        <button class="fa-solid fa-moon-o" onclick="myFunction()"></button>
+                        <script>
+                            function myFunction() {
+                                var element = document.body;
+                                element.classList.toggle("dark-mode");
+                            }
+                        </script>
+                    </a>
+                    </div>
             </div>
-        </div>
-        <!-- Navigation bar, bottom of bar -->
-        <h1>This ..project.. was complete once, but the hard drive was corrupted. I managed to find an old draft on a dusty 
-            usb stick and am working towards implementing some work to re-finish this. please stand by as I reformat and 
-            re-publish this master piece.
-        </h1>
-        <div id="container1">
+            <!-- Navigation bar, bottom of bar -->
+            <h1>This ..project.. was complete once, but the hard drive was corrupted. I managed to find an old draft on a dusty 
+                usb stick and am working towards implementing some work to re-finish this. please stand by as I reformat and 
+                re-publish this master piece.
+            </h1>
+            <div id="container1">
 
-            <div id="gooter">
-                <div id='console' style="margin-right: 20%; margin-left: 20%;">
-                    <h1>A choice that will define our future!</h1>
-                    <p>3 scenarios for Canada.</p>
-                    <p>Scroll in to see more details regarding the provinces and major metropolitan areas.</p>
-                    <p>Click on a feature to view estimated population and GDP.</p>
-                    <p><label id="active-scenario"><b>Click a scenario for more information</b></label></p>
-                    <div class='session'>
-                        <h2>Population</h2>
-                        <div class='row colors'>
-                        </div>
-                        <div id='Country-legend'>
-                            <div class='row labels'>
-                                <div class='label'>18.9 Million</div>
-                                <div class='label'>40 Million</div>
-                                <div class='label'>60 Million</div>
-                                <div class='label'>80 Million</div>
-                                <div class='label'>100 Million</div>
+                <div id="gooter">
+                    <div id='console' style="margin-right: 20%; margin-left: 20%;">
+                        <h1>A choice that will define our future!</h1>
+                        <p>3 scenarios for Canada.</p>
+                        <p>Scroll in to see more details regarding the provinces and major metropolitan areas.</p>
+                        <p>Click on a feature to view estimated population and GDP.</p>
+                        <p><label id="active-scenario"><b>Click a scenario for more information</b></label></p>
+                        <div class='session'>
+                            <h2>Population</h2>
+                            <div class='row colors'>
                             </div>
-                        </div>
-                        <div id='Provinces-legend'>
-                            <div class='row labels'>
-                                <div class='label2'>19,000</div>
-                                <div class='label2'>100,000</div>
-                                <div class='label2'>500,000</div>
-                                <div class='label2'>1 Million</div>
-                                <div class='label2'>10 Million</div>
-                                <div class='label2'>39 Million</div>
+                            <div id='Country-legend'>
+                                <div class='row labels'>
+                                    <div class='label'>18.9 Million</div>
+                                    <div class='label'>40 Million</div>
+                                    <div class='label'>60 Million</div>
+                                    <div class='label'>80 Million</div>
+                                    <div class='label'>100 Million</div>
+                                </div>
                             </div>
-                        </div>
-                        <div id='Cities-legend'>
-                            <div class='row labels'>
-                                <div class='label3'> &lt;70,000 </div>
-                                <div class='label3'>500,000</div>
-                                <div class='label3'>4.5 Million</div>
-                                <div class='label3'>9 Million</div>
-                                <div class='label3'>13 Million</div>
-                                <div class='label3'>>16 Million</div>
+                            <div id='Provinces-legend'>
+                                <div class='row labels'>
+                                    <div class='label2'>19,000</div>
+                                    <div class='label2'>100,000</div>
+                                    <div class='label2'>500,000</div>
+                                    <div class='label2'>1 Million</div>
+                                    <div class='label2'>10 Million</div>
+                                    <div class='label2'>39 Million</div>
+                                </div>
                             </div>
+                            <div id='Cities-legend'>
+                                <div class='row labels'>
+                                    <div class='label3'> &lt;70,000 </div>
+                                    <div class='label3'>500,000</div>
+                                    <div class='label3'>4.5 Million</div>
+                                    <div class='label3'>9 Million</div>
+                                    <div class='label3'>13 Million</div>
+                                    <div class='label3'>>16 Million</div>
+                                </div>
+                            </div>
+
                         </div>
+                        <div class='session' id='sliderbar'>
 
-                    </div>
-                    <div class='session' id='sliderbar'>
+                            <h2>Year: <label id='active-year'><b>Slide the years for projected growth</b></label></h2>
 
-                        <h2>Year: <label id='active-year'><b>Slide the years for projected growth</b></label></h2>
+                            <input id='slider' class='row' type='range' min='1' max='5' step='1' value='1' />
+                            <div class="chart">
+                                <div class="tick"><span>2016</span></div>
+                                <div class="tick"><span>2025</span></div>
+                                <div class="tick"><span>2050</span></div>
+                                <div class="tick"><span>2075</span></div>
+                                <div class="tick"><span>2100</span></div>
+                            </div>
 
-                        <input id='slider' class='row' type='range' min='1' max='5' step='1' value='1' />
-                        <div class="chart">
-                            <div class="tick"><span>2016</span></div>
-                            <div class="tick"><span>2025</span></div>
-                            <div class="tick"><span>2050</span></div>
-                            <div class="tick"><span>2075</span></div>
-                            <div class="tick"><span>2100</span></div>
                         </div>
-
-                    </div>
-                    <div class='session'>
-                        <h2>Immigration Scenario</h2>
-                        <div class='row' id='buttons'>
-                            <input id='1' type='radio' name='toggle' value= '1' checked='checked'>
-                            <label for='1'>Zero Immigration Scenario</label>
-                            <input id='2' type='radio' name='toggle' value='2'>
-                            <label for='2'>Status Quo Scenario</label>
-                            <input id='3' type='radio' name='toggle' value='3'>
-                            <label for='3'>Hundred Million Scenario</label>
+                        <div class='session'>
+                            <h2>Immigration Scenario</h2>
+                            <div class='row' id='buttons'>
+                                <input id='1' type='radio' name='toggle' value= '1' checked='checked'>
+                                <label for='1'>Zero Immigration Scenario</label>
+                                <input id='2' type='radio' name='toggle' value='2'>
+                                <label for='2'>Status Quo Scenario</label>
+                                <input id='3' type='radio' name='toggle' value='3'>
+                                <label for='3'>Hundred Million Scenario</label>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- </div> -->
+            <!-- </div> -->
 
 
-        <div id='map'></div>
-        <script src='js/1925B_json.js'></script>
-        <script src='js/mbkey.js'> </script>
-        <script src='js/1925B.js'>  </script>
+            <div id='map'></div>
+            <script src='js/1925B_json.js'></script>
+            <script src='js/mbkey.js'> </script>
+            <script src='js/1925B.js'>  </script>
 
 
 
-        <div class="footer">
-            <a href="https://ca.linkedin.com/in/jms-brtn" class="fa-brands fa-linkedin-square" style="font-size:48px;color:#FFFFFF"></a>
-            <a href="https://github.com/James-Burton" class="fa-brands fa-github" style="font-size:48px;color:#FFFFFF"></a>
-            <p class="copyright">ⓒ James Burton 2022</p>
-        </div>
-    </body>
-</html>
+            <div class="footer">
+                <a href="https://ca.linkedin.com/in/jms-brtn" class="fa-brands fa-linkedin-square" style="font-size:48px;color:#FFFFFF"></a>
+                <a href="https://github.com/James-Burton" class="fa-brands fa-github" style="font-size:48px;color:#FFFFFF"></a>
+                <p class="copyright">ⓒ James Burton 2022</p>
+            </div>
+            </body>
+        </html>
