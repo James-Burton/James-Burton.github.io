@@ -55,7 +55,7 @@ var map = new mapboxgl.Map({
     //Sets zoom, pitch, bearing and implements the bounding frame
     minZoom: 1,
     zoom: 1,
-    //pitch: 90,
+    pitch: 45,
     bearing: 0,
     maxBounds: bounds // Sets bounds as max
     });
