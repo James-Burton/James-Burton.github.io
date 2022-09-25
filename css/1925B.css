@@ -200,7 +200,8 @@ body {
     top: 0;
     bottom: 0;
     width: 75%;
-    margin: 1% 12.5% 2% 12.5%;
+    /*margin: 1% 12.5% 2% 12.5%;*/
+    margin-bottom:10px;
 }
 
 #canvas-holder {
