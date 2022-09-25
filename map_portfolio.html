@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css//main.css"> <!-- link to stylesheet for CSS -->
+        <link rel="icon" href="images///leaf_b.png">
+        <link rel="stylesheet" 
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"><!-- link to social icon library -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <title>Certificates</title>
+        <style>
+            * {box-sizing:border-box}
+
+            /* Slideshow container */
+            .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+            }
+
+            /* Make the images invisible by default */
+            .Containers {
+                display: none;
+            }
+
+            /* forward & Back buttons */
+            .Back, .forward {
+                cursor: pointer;
+                position: absolute;
+                top: 48%;
+                width: auto;
+                margin-top: -23px;
+                padding: 17px;
+                color: grey;
+                font-weight: bold;
+                font-size: 19px;
+                transition: 0.4s ease;
+                border-radius: 0 5px 5px 0;
+                user-select: none;
+            }
+
+            /* Place the "forward button" to the right */
+            .forward {
+                right: 0;
+                border-radius: 4px 0 0 4px;
+            }
+
+            /*when the user hovers,add a black background with some little opacity */
+            .Back:hover, .forward:hover {
+                background-color: rgba(0,0,0,0.8);
+            }
+
+            /* Caption Info */
+            .Info {
+                color: #e3e3e3;
+                font-size: 16px;
+                padding: 10px 14px;
+                position: absolute;
+                bottom: 10px;
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Worknumbering (1/3 etc) */
+            .MessageInfo {
+                color: #f2f2f3;
+                font-size: 14px;
+                padding: 10px 14px;
+                position: absolute;
+                top: 0;
+            }
+
+            /* The circles or bullets and indicators */
+            .dots {
+                cursor: pointer;
+                height: 16px;
+                width: 16px;
+                margin: 0 3px;
+                background-color: #acc;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.5s ease;
+            }
+
+            .enable, .dots:hover {
+                background-color: #717161;
+            }
+
+            /* Faint animation */
+            .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.4s;
+                animation-name: fade;
+                animation-duration: 1.4s;
+            }
+
+            @-webkit-keyframes fade {
+                from {opacity: .5}
+                to {opacity: 2}
+            }
+
+            @keyframes fade {
+                from {opacity: .5}
+                to {opacity: 2}
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <!-- Navigation bar, top of page -->
+        <div class="topnav">
+            <a id="logo"><img src="images///leaf_b.png" alt="leaf stand in text" title="leaf stand in Logo" style="width:29px;height:29px;margin-top:45%;"></a>
+            <div class="topnav-right">
+
+                <a href="index.html" class="active">
+                    <button  class="active fa-solid fa-house" ></button>
+
+                </a>
+                <a href="projects.html">
+                    <button  class="fa-solid fa-code" ></button>
+                </a>
+                <a>
+                    <button class="fa-solid fa-moon-o" onclick="myFunction()"></button>
+                    <script>
+                        function myFunction() {
+                            var element = document.body;
+                            element.classList.toggle("dark-mode");
+                        }
+                    </script>
+                </a>
+            </div>
+        </div>
+        <!-- Navigation bar, bottom of bar -->
+        <!-- Slideshow container -->
+        <div class="slideshow-container fade">
+
+            <!-- Full images with numbers and message Info -->
+            <div class="Containers">
+                <div class="MessageInfo">1 / 3</div>
+                <img src="images/portfolio/Origins_of_Fog.png" style="width:100%">
+                <div class="Info">First caption</div>
+            </div>
+
+            <div class="Containers">
+                <div class="MessageInfo">2 / 3</div>
+                <img src="images/leaf_r.png" style="width:100%">
+                <div class="Info">Second Caption</div>
+            </div>
+
+            <div class="Containers">
+                <div class="MessageInfo">3 / 3</div>
+                <img src="images/leaf_b.png" style="width:100%">
+                <div class="Info">Third Caption</div>
+            </div>
+
+            <!-- Back and forward buttons -->
+            <a class="Back" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="forward" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <!-- The circles/dots -->
+        <div style="text-align:center">
+            <span class="dots" onclick="currentSlide(1)"></span>
+            <span class="dots" onclick="currentSlide(2)"></span>
+            <span class="dots" onclick="currentSlide(3)"></span>
+        </div>
+        <script>
+            var slidePosition = 1;
+            SlideShow(slidePosition);
+
+            // forward/Back controls
+            function plusSlides(n) {
+                SlideShow(slidePosition += n);
+            }
+
+            //  images controls
+            function currentSlide(n) {
+                SlideShow(slidePosition = n);
+            }
+
+            function SlideShow(n) {
+                var i;
+                var slides = document.getElementsByClassName("Containers");
+                var circles = document.getElementsByClassName("dots");
+                if (n > slides.length) {slidePosition = 1}
+                if (n < 1) {slidePosition = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < circles.length; i++) {
+                    circles[i].className = circles[i].className.replace(" enable", "");
+                }
+                slides[slidePosition-1].style.display = "block";
+                circles[slidePosition-1].className += " enable";
+            } </script>
+
+
+        <div class="footer">
+            <a href="https://ca.linkedin.com/in/jms-brtn" class="fa-brands fa-linkedin-square" style="font-size:48px;color:#FFFFFF"></a>
+            <a href="https://github.com/James-Burton" class="fa-brands fa-github" style="font-size:48px;color:#FFFFFF"></a>
+            <p class="copyright">ⓒ James Burton 2022</p>
+        </div>
+    </body>
+</html>
