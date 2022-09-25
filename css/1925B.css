@@ -4,7 +4,10 @@ body, html {
     height: 100%;
     background-color: #ffffff;
 }
-
+.row{
+    background-color:inherit;
+    color:inherit;
+}
 .column {
     float: left;
     width: 50%;
@@ -68,6 +71,10 @@ img {
 .topnav-right {
     float: right;
     margin-top: 15px;
+}
+.topnav-right button{
+    background-color:black;
+    color:white;
 }
 /* Sub-navigation menu */
 .subnav {
@@ -200,8 +207,7 @@ body {
     top: 0;
     bottom: 0;
     width: 75%;
-    /*margin: 1% 12.5% 2% 12.5%;*/
-    margin-bottom:10px;
+    margin: 1% 12.5% 2% 12.5%;
 }
 
 #canvas-holder {
@@ -273,7 +279,7 @@ a {
     flex-wrap: nowrap;
     display: inline-block;
     text-align: center;
-    color:black;
+    color:inherit;
 }  
 
 .label2 {
