@@ -1,0 +1,121 @@
+body, html {
+    margin: 0;
+    font-family: 'Raleway',sans-serif;
+    flex-direction: column;
+    font-size:14px;
+    height: 100%;
+    background-color: #FFFFFF;
+}
+p a{
+    margin:0;
+}
+.row{
+    background-color:#ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 200px;
+    overflow: auto;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+    background-color:#ffffff;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+.center {
+    text-align: center;
+    margin: 0;
+}
+
+.logo {
+    float:left;
+    width: 55%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top:45%;
+    margin-bottom:auto;
+    text-align:left;
+}
+/* Top navigational bar codes */
+.topnav {
+    overflow: hidden;
+    background-color: #fafafa;
+    height: 70px;
+}
+.topnav a {
+    float: left;
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+}
+.topnav-right a.active {
+    color: #5a5a5a;
+}
+.topnav-right {
+    float: right;
+    margin-top: 15px;
+}
+.topnav-right button {
+    font-size:25px;
+    border: none;
+    outline: 0;
+    display: inline-block;
+    color: #08070D;
+    background-color: #fafafa;
+    text-align: center;
+    cursor: pointer;
+}
+.topnav-right button:hover {
+    border: none;
+    outline: 0;
+    background-color: #fafafa;
+    color: #5a5a5a;
+}
+footer { 
+    display: block;
+}
+.footer {
+    top: auto;
+    bottom: 0;
+    width: 100%;
+    background-color: #08070D;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 2em;
+    padding-top: 5px;
+    position: relative;
+    float: bottom;
+    margin-top:auto;
+}
+.copyright {
+    font-size: 10px;
+    color: #fafafa;
+}
+/* Top map style */
+#map {
+    width: 40vw;
+    height: 30vw;
+    margin:auto;
+    border:2px solid #08070D;
+}
