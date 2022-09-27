@@ -104,9 +104,6 @@ footer {
     text-align: center;
     font-size: 2em;
     padding-top: 5px;
-    position: relative;
-    float: bottom;
-    margin-top:auto;
 }
 .copyright {
     font-size: 10px;
