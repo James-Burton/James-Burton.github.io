@@ -95,6 +95,9 @@ p a{
 footer { 
     display: block;
 }
+.h1{
+    text-align:center;
+}
 .footer {
     top: auto;
     bottom: 0;
@@ -104,7 +107,7 @@ footer {
     text-align: center;
     font-size: 2em;
     padding-top: 5px;
-    position:relative;
+    position:fixed;
 }
 .copyright {
     font-size: 10px;
